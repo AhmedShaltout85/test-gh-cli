@@ -16,6 +16,44 @@ A comprehensive list of `gh` commands for working with GitHub from the terminal.
 
 ---
 
+## Configuration
+
+| Command | Description |
+|---|---|
+| `gh config list` | List all configuration settings |
+| `gh config get <key>` | Get the value of a config key |
+| `gh config set <key> <value>` | Set a configuration value |
+| `gh config set editor <editor>` | Set default editor (e.g. `vim`, `nano`, `code`) |
+| `gh config set git_protocol <protocol>` | Set Git protocol: `https` or `ssh` |
+| `gh config set prompt enabled` | Enable interactive prompts |
+| `gh config set prompt disabled` | Disable interactive prompts |
+| `gh config set pager <pager>` | Set pager (e.g. `less`, `more`) |
+| `gh config set browser <browser>` | Set default browser |
+| `gh config set http_unix_socket <path>` | Set Unix socket for HTTP |
+
+### Common `gh config set` Examples
+
+```bash
+# Set default editor
+gh config set editor "code --wait"
+
+# Use SSH instead of HTTPS for Git operations
+gh config set git_protocol ssh
+
+# Disable interactive prompts (useful in CI)
+gh config set prompt disabled
+
+# Set a custom pager
+gh config set pager "less -R"
+
+# Apply setting for a specific host
+gh config set git_protocol ssh --host github.com
+```
+
+> Config is stored at `~/.config/gh/config.yml`
+
+---
+
 ## Repository
 
 | Command | Description |
